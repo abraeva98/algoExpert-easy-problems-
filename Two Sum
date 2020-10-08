@@ -1,0 +1,17 @@
+function twoNumberSum(array, targetSum) {
+  // Write your code here.
+	// we can use object to store each number we iterate through
+	// on each iteration we subtract a current number from target
+	// we check if the difference between 2 num is in the array
+	const obj = {};
+	let arr = [];
+	for (let i = 0; i < array.length; i ++) {
+		let number = targetSum - array[i];
+		if (obj[number]) {
+			arr = [array[i], number]
+		} else {
+			obj[array[i]] = 1;
+		}
+	}
+	return arr;
+}
