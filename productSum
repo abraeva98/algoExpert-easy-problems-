@@ -1,0 +1,16 @@
+function productSum(array, depth = 1) {
+  // sum is equal to 0
+	let sum = 0;
+   // loop through each element in an array
+	for (let i = 0; i < array.length; i ++) {
+    // check if element is not array
+		if (!Array.isArray(array[i])) {
+    // if it is not, just add it to the sum
+				sum += array[i]
+				} else {
+    // if it is use recursion and call the same function just changing the parameter to the current element(array), increment depth by one
+          sum += productSum(array[i], depth + 1)
+				}
+	}
+return sum * depth;
+}
