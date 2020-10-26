@@ -1,0 +1,15 @@
+function getNthFib(num) {
+// array with two first fibonacci numbers
+  const array = [0, 1];
+// start looping from 2, because we already have first two numbers in an array. Loop while i is lesser than num
+  for (let i = 2; i < num; i ++) {
+// switch only two numbers at a time, second number will be the sum of the first and the second
+    const secondNum = array[0] + array[1];
+// first number in the array will be equal to the second
+    array[0] = array[1]
+// the second number will be equal to the sum of two
+    array[1] = secondNum
+  }
+  // if number is lesser than one return first number in the array, else return the second number
+  return num > 1 ? array[1] : array[0]
+}
