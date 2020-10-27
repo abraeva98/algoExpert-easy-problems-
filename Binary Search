@@ -1,0 +1,22 @@
+function binarySearch(array, target, left = 0, right = array.length - 1) {
+  // middle index if sum of left and right number divided by 2
+	const middleNum = Math.floor((right + left) / 2);
+  // potential number is at middleNum index
+	const number = array[middleNum];
+  // if right index is less than left, it means that number is not found
+  if (right < left) return -1;
+  // check if the number is equal to target
+  if (target === number) {
+  // if it is, return its index (middleNum)
+			return middleNum
+		}
+ // check if potential number is lesser than a number
+		else if (target > number) {
+  // if it is, change left index to middleNum + 1
+			return binarySearch(array, target, middleNum + 1, right)
+  // check if the number is is greater than target
+		} if(target < number) {
+  // if it is, change right number to middleNum - 1
+			return binarySearch(array, target, left, middleNum - 1)
+		} 
+}
