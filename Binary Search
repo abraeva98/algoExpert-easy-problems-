@@ -1,3 +1,4 @@
+1.
 function binarySearch(array, target, left = 0, right = array.length - 1) {
   // middle index if sum of left and right number divided by 2
 	const middleNum = Math.floor((right + left) / 2);
@@ -19,4 +20,26 @@ function binarySearch(array, target, left = 0, right = array.length - 1) {
   // if it is, change right number to middleNum - 1
 			return binarySearch(array, target, left, middleNum - 1)
 		} 
+}
+
+2.
+function binarySearch(array, target, left = 0, right = array.length - 1) {
+  // iterate while left index is lesser than right
+	while (left <= right) {
+	// middle index is sum of left and right indesex divided by 2
+		const middle = Math.floor((left + right) / 2);
+	// number is potential number
+		const number = array[middle];
+	// if number is equal to the target, return its index
+		if (number === target) {
+			return middle;
+	// if number is lesser than the target than left, the index has to be moved to middle index + 1
+		} else if (number < target) {
+			left = middle + 1;
+		} else {
+	// if number is larger than the target, right has to be moved back to the index befoe middle
+			right = middle - 1;
+		}
+	}
+	return -1;
 }
