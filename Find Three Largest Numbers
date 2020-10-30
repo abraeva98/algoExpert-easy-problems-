@@ -1,0 +1,27 @@
+function findThreeLargestNumbers(array) {
+  // initialize array with three elements in it
+	const largest = [null, null, null];
+  // iterate through entire array and check each element
+	for (let i = 0; i < array.length; i ++) {
+  // if current element is greater than the last element in the largest array or the last element of the largest is null
+		if (array[i] > largest[2] || largest[2] === null) {
+  // move each element in largest array
+      largest[0] = largest[1]
+			largest[1] = largest[2];
+  // and the last and biggest number in the largest will be current element
+			largest[2] = array[i];
+  // if current element is greater than second element in largest or second element is null
+		} else if (array[i] > largest[1] || largest[1] === null) {
+  // move elements to left
+			largest[0] = largest[1];
+  // second element becomes current element
+			largest[1] = array[i];
+  // if current element is greater than first element in largest or first element is null
+		} else if (array[i] > largest[0] || largest[0] === null) {
+  // first element becomes current element
+			largest[0] = array[i]
+		}
+	}
+  // return final array
+	return largest;
+}
