@@ -1,12 +1,14 @@
 function bubbleSort(array) {
 // sorted is equal to false
   let sorted = false;
+// initialize the counter, so we don't need to check sorted elements in the array
+   let counter = 0;
 // while it is false, run this code
 	while (!sorted) {
 // sorted is equal to true
 		sorted = true
 // iterate through array and swap
-		for (let i = 0; i < array.length; i ++) {
+		for (let i = 0; i < array.length - counter; i ++) {
 		if (array[i] > array[i + 1]) {
 			let temp = array[i];
 			array[i] = array[i + 1] 
@@ -15,6 +17,7 @@ function bubbleSort(array) {
 			sorted = false;
 		}
 	}
+	counter ++;
 	}
 	return array;
 }
