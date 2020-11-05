@@ -1,0 +1,17 @@
+function insertionSort(array) {
+  // iterate through each element in the array, starting with index 1
+  for (let i = 1; i < array.length; i ++) {
+  // declaring pointer number, it will be equal to current index at first
+		let p = i;
+  // while current element is lesser than previous element
+		while (array[p] < array[p - 1]) {
+  // swap the number
+			const temp = array[p];
+			array[p] = array[p - 1];
+			array[p - 1] = temp;
+  // decrement the pointer by one, so we can check if previous number is lesser than current number
+			p --;
+		}
+	}
+	return array;
+}
