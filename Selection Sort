@@ -1,0 +1,23 @@
+function selectionSort(array) {
+  // loop through each element in the array
+	for (let i = 0; i < array.length; i ++) {
+  // declare an index value; not assign to anything yet, because it will only change if the condition is met
+		let index;
+  // let current smallest number be a current number
+		let currentSmallest = array[i];
+  // check the array again starting with the next index
+		for (let j = i + 1; j < array.length; j ++) {
+  // compare currentSmallest element to a current element
+			if (currentSmallest > array[j]) {
+  // if current element is smaller than current smallest, change current smallest to a current element, save the index
+				currentSmallest = array[j];
+				index = j;
+			}
+		}
+  // swap current element wit a smallest element in an array
+		let temp = array[i];
+		array[i] = currentSmallest;
+		array[index] = temp
+	}
+	return array;
+}
