@@ -1,0 +1,17 @@
+function isPalindrome(string) {
+  // create two pointers for the first element and for the last
+	let left = 0;
+	let right = string.length - 1;
+  // iterate through the string as long as the left poiner is lesser than the right
+	while (left < right) {
+  // if elements on the current pointers are the same increase the left and decrement the right
+		if (string[left] === string[right]) {
+			left ++;
+			right --;
+		} else {
+   // if elements are not equal return false
+			return false;
+		}
+	}
+	return true;
+}
