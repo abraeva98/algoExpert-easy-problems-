@@ -1,0 +1,26 @@
+function tournamentWinner(competitions, results) {
+	let points = {};
+	for (let i = 0; i < results.length; i ++) {
+		let winner;
+		let loser;
+		if (results[i] === 0) {
+			winner = competitions[i][1];
+			loser = competitions[i][0];
+		} else {
+			winner = competitions[i][0];
+			loser = competitions[i][1];
+		}
+		
+		if (!points[winner]) {
+			points[winner] = 3;
+		} else {
+			points[winner] += 3;
+		}
+		
+		if (!points[loser]) {
+			points[loser] = 0;
+		} 
+	}
+	
+	return Object.keys(points).sort((a, b) => points[b] - points[a])[0];
+}
