@@ -1,0 +1,12 @@
+function nonConstructibleChange(coins) {
+	coins.sort((a, b) => a - b);
+	let maximum = 0;
+	for (let i = 0; i < coins.length; i ++) {
+		if (maximum + 1 < coins[i]) {
+			return maximum + 1;
+		} else {
+			maximum += coins[i];
+		}
+	}
+	return maximum + 1;
+}
