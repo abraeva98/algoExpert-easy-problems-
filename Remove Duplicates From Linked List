@@ -1,0 +1,23 @@
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function removeDuplicatesFromLinkedList(linkedList) {
+  /*
+		iterate through the linked list and each iteration
+		check if next node is the same as current
+		if it is move pointer to the next of the next
+	*/
+	let node = linkedList;
+	while (node !== null && node.next !== null) {
+		if (node.value === node.next.value) {
+			node.next = node.next.next;
+		} else {
+			node = node.next;
+		}
+	}
+  return linkedList;
+}
