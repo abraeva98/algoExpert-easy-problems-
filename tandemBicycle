@@ -1,0 +1,20 @@
+function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
+  // Write your code here.
+	redShirtSpeeds.sort((a, b) => a - b);
+	blueShirtSpeeds.sort((a, b) => a - b);
+	if(!fastest){
+		idx = 0;
+	} else {
+		idx = redShirtSpeeds.length - 1;
+	}
+	let total = 0;
+	for(let i = 0; i < redShirtSpeeds.length; i ++){
+		total += Math.max(blueShirtSpeeds[idx], redShirtSpeeds[i]);
+		if(fastest) {
+			idx --;
+		} else {
+			idx ++;
+		}
+	}
+  return total;
+}
